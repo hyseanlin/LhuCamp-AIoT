@@ -1,1 +1,1 @@
-# LHUCampAIOT-2020Fall
+# LHU-AIoT-Camp-2020Fall
