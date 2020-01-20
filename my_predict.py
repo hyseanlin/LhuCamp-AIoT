@@ -34,6 +34,12 @@ def main():
         default=48,
         help='模型輸入影像高度',
     )
+    arg_parser.add_argument(
+        '--camera-source',
+        help='攝影機編號',
+        type=int,
+        default=0,
+    )
 
     # 解讀程式參數
     args = arg_parser.parse_args()
@@ -50,7 +56,7 @@ def main():
     f.close()
 
     # 參數設定
-    camera_src = 0
+    camera_src = args.camera_source
 
     cap = cv2.VideoCapture(camera_src)
     if cap.isOpened() is not True:
