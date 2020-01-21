@@ -16,7 +16,6 @@ from keras.applications.vgg16 import VGG16
 from keras.applications.vgg19 import VGG19
 from keras.applications.resnet50 import ResNet50
 from keras.applications.densenet import DenseNet121
-from keras.applications.mobilenetv2 import MobileNetV2
 
 
 class AccuracyHistory(Callback):
@@ -85,14 +84,6 @@ def choose_model(model_type, input_shape, class_count):
     elif model_type == 'DenseNet121':
         input_tensor = Input(shape=input_shape)
         model = DenseNet121(
-            input_shape=input_shape,
-            classes=class_count,
-            weights=None,
-            input_tensor=input_tensor,
-        )
-    elif model_type == 'MobileNetV2':
-        input_tensor = Input(shape=input_shape)
-        model = MobileNetV2(
             input_shape=input_shape,
             classes=class_count,
             weights=None,
